@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="hy">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Դր. Էրիկ Զոհրաբյան | Պրեմիում Պորտֆոլիո</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #0b2545;
+            overflow-x: hidden;
+        }
+
+        .portfolio-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            box-shadow: 0 20px 50px rgba(11, 37, 69, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* ========================================= */
+        /* *** ԱՆԻՄԱՑԻԱՆԵՐԻ ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ *** */
+        /* ========================================= */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .img-animate {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .img-animate.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* --- Ընդհանուր դասեր --- */
+        .section {
+            display: flex;
+            position: relative;
+            min-height: 480px;
+            border-bottom: 1px solid #e0e6ed;
+            overflow: hidden;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        /* Տեքստի ոճերը */
+        .script-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: #4a6fa5;
+            margin-bottom: -10px;
+            display: block;
+        }
+
+        .bold-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 65px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7a8fa6;
+            margin-bottom: 10px;
+        }
+
+        /* Նկարների ոճերը */
+        .img-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        /* --- 1. ՍԵԿՑԻԱ (HERO - PORTFOLIO) --- */
+        .hero {
+            background-color: #f8f9fa;
+            height: 550px;
+        }
+
+        .hero-left {
+            flex: 1.3;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 244, 248, 0.9) 100%);
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+            z-index: -1;
+        }
+
+        .hero-right {
+            flex: 1;
+            background-color: #1a3b6e;
+            position: relative;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-right img {
+            width: 90%;
+            height: 95%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 10px 10px 0 0;
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.3);
+            filter: grayscale(100%);
+        }
+
+        .hero .bold-title {
+            color: #1a3b6e;
+            font-size: 75px;
+            margin-top: 10px;
+        }
+
+        .hero .subtitle {
+            color: #1a3b6e;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        .year-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-weight: 800;
+            font-size: 24px;
+            color: #1a3b6e;
+            z-index: 3;
+        }
+
+        /* --- 2. ՍԵԿՑԻԱ (ABOUT) --- */
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-left {
+            flex: 1;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .about-left img {
+            width: 85%;
+            height: 90%;
+            object-fit: cover;
+            object-position: top;
+            filter: grayscale(100%);
+        }
+
+        .about-right {
+            flex: 1.6;
+            background-color: #1a3b6e;
+            color: white;
+            padding: 70px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-right .script-title {
+            color: #8ab4f8;
+        }
+
+        .about-right .bold-title {
+            color: white;
+            font-size: 55px;
+        }
+
+        .about-right .subtitle {
+            color: #8ab4f8;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+        }
+
+        .info-grid h4 {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #8ab4f8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .info-grid p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ccdae8;
+        }
+
+        /* --- 3. ՍԵԿՑԻԱ (EDUCATION) --- */
+        .education {
+            background-color: #f8f9fa;
+        }
+
+        .edu-left {
+            flex: 1.2;
+            background-color: #1a3b6e;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        .edu-left img {
+            width: 80%;
+            height: 90%;
+            object-fit: cover;
+            object-position: top;
+            filter: grayscale(100%);
+        }
+
+        .edu-right {
+            flex: 1.8;
+            padding: 70px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .edu-right .script-title {
+            color: #4a6fa5;
+        }
+
+        .edu-right .bold-title {
+            color: #1a3b6e;
+            font-size: 55px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #dbe7f5;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(26, 59, 110, 0.15);
+        }
+
+        .card h4 {
+            font-size: 14px;
+            color: #1a3b6e;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .card p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #4a5a6a;
+            margin-bottom: 5px;
+        }
+
+        /* --- 4. ՍԵԿՑԻԱ (WORK EXPERIENCE) --- */
+        .experience {
+            background-color: #1a3b6e;
+            color: white;
+        }
+
+        .exp-left {
+            flex: 1.6;
+            padding: 70px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .exp-left .script-title {
+            color: #8ab4f8;
+        }
+
+        .exp-left .bold-title {
+            color: white;
+            font-size: 55px;
+        }
+
+        .exp-list {
+            margin-top: 40px;
+        }
+
+        .exp-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .exp-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-date {
+            font-weight: 700;
+            color: #8ab4f8;
+            min-width: 110px;
+            font-size: 13px;
+        }
+
+        .exp-desc h4 {
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .exp-desc p {
+            font-size: 12px;
+            color: #ccdae8;
+            line-height: 1.6;
+        }
+
+        .exp-right {
+            flex: 1;
+            background-color: white;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        .exp-right img {
+            width: 85%;
+            height: 90%;
+            object-fit: cover;
+            object-position: top;
+            filter: grayscale(100%);
+        }
+
+        /* ========================================= */
+        /* *** ՍԵԿՑԻԱ. ՄԵՐ ԱՇԽԱՏԱՆՔՆԵՐԸ (WORKS) *** */
+        /* ========================================= */
+        .works {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 40px;
+            background: linear-gradient(160deg, #0b2545 0%, #1a3b6e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .works .script-title {
+            color: #8ab4f8;
+        }
+
+        .works .bold-title {
+            color: white;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .works .subtitle {
+            color: #8ab4f8;
+            margin-bottom: 50px;
+        }
+
+        /* --- Աշխատանքների ցանց --- */
+        .works-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        .work-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Սլայդեր Before / After --- */
+        .before-after-slider {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            user-select: none;
+            cursor: ew-resize;
+        }
+
+        .before-after-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .before-after-slider .img-after {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #8ab4f8;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(138, 180, 248, 0.8);
+        }
+
+        .slider-handle::after {
+            content: '⇔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #8ab4f8;
+            color: #0b2545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+            box-shadow: 0 0 20px rgba(138, 180, 248, 0.9);
+        }
+
+        .ba-label {
+            position: absolute;
+            top: 15px;
+            padding: 5px 14px;
+            background: rgba(11, 37, 69, 0.85);
+            color: #8ab4f8;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            z-index: 5;
+        }
+
+        .ba-label.before {
+            left: 15px;
+        }
+
+        .ba-label.after {
+            right: 15px;
+        }
+
+        .work-caption {
+            margin-top: 18px;
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .work-caption span {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: #8ab4f8;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* ========================================= */
+        /* *** ՍԵԿՑԻԱ. ԿԱՊ ՄԵԶ ՀԵՏ (CONTACT) *** */
+        /* ========================================= */
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            background-color: #0b2545;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 40px;
+            color: #8ab4f8;
+            margin-bottom: 10px;
+        }
+
+        .contact h3 {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 15px;
+            color: #ccdae8;
+            max-width: 500px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background-color: #1a3b6e;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+            border: 2px solid #1a3b6e;
+        }
+
+        .social-btn:hover {
+            background-color: #8ab4f8;
+            border-color: #8ab4f8;
+            color: #0b2545;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(138, 180, 248, 0.3);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* ========================================= */
+        /* *** ԱԴԱՊՏԻՎ ԿՈԴ *** */
+        /* ========================================= */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .portfolio-wrapper {
+                border-radius: 8px;
+            }
+
+            .section {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .hero-left::before,
+            .hero-right,
+            .edu-left,
+            .exp-right {
+                clip-path: none;
+            }
+
+            .hero {
+                height: auto;
+            }
+
+            .hero-left {
+                padding: 40px 20px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-left p {
+                max-width: 100%;
+            }
+
+            .hero .bold-title {
+                font-size: 45px;
+            }
+
+            .hero-right {
+                height: 400px;
+                width: 100%;
+            }
+
+            .hero-right img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+
+            .year-badge {
+                top: 20px;
+                right: 20px;
+                color: white;
+            }
+
+            .about {
+                flex-direction: column-reverse;
+            }
+
+            .about-left {
+                height: 350px;
+                width: 100%;
+            }
+
+            .about-left img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .about-right {
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .about-right .bold-title {
+                font-size: 35px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+                gap: 20px;
+            }
+
+            .edu-left {
+                height: 350px;
+                width: 100%;
+            }
+
+            .edu-left img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .edu-right {
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .edu-right .bold-title {
+                font-size: 35px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .exp-left {
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .exp-left .bold-title {
+                font-size: 35px;
+            }
+
+            .exp-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: left;
+            }
+
+            .exp-right {
+                height: 350px;
+                width: 100%;
+            }
+
+            .exp-right img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+
+            /* Works ադապտացիա */
+            .works {
+                padding: 60px 20px;
+            }
+
+            .works .bold-title {
+                font-size: 32px;
+            }
+
+            .works-gallery {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .before-after-slider {
+                height: 260px;
+            }
+
+            /* Contact ադապտացիա */
+            .contact {
+                padding: 60px 20px;
+            }
+
+            .contact h2 {
+                font-size: 32px;
+            }
+
+            .contact h3 {
+                font-size: 22px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .social-btn {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="portfolio-wrapper">
+
+        <!-- ՍԵԿՑԻԱ 1: HERO -->
+        <section class="section hero animate-on-scroll">
+            <div class="hero-left">
+                <span class="script-title">Ստոմատոլոգիա</span>
+                <h1 class="bold-title">ԴՐ. ԷՐԻԿ<br>ԶՈՀՐԱԲՅԱՆ</h1>
+                <div class="subtitle">ԱՏԱՄՆԱԲՈՒԺ • ԻՄՊԼԱՆՏԱՑԻԱ • ԷՍԹԵՏԻԿԱ</div>
+                <p>— Ստեղծում եմ ժպիտներ, որոնք խոսում են ձեր փոխարեն։</p>
+            </div>
+            <div class="hero-right">
+                <div class="year-badge">2026</div>
+                <!-- *** ՁԵՐ ԼՈՒՍԱՆԿԱՐԸ *** -->
+                <img src="doctor1.jpg" alt="Դր. Էրիկ Զոհրաբյան" class="img-animate">
+            </div>
+        </section>
+
+        <!-- ՍԵԿՑԻԱ 2: ABOUT -->
+        <section class="section about animate-on-scroll">
+            <div class="about-left">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                    alt="Ստոմատոլոգիա" class="img-animate">
+            </div>
+            <div class="about-right">
+                <span class="script-title">Բարև, ես</span>
+                <h2 class="bold-title">ԴՐ. ԷՐԻԿ ԶՈՀՐԱԲՅԱՆՆ ԵՄ</h2>
+                <div class="subtitle">ՓՈՐՁԱԳԵՏ ՍՏՈՄԱՏՈԼՈԳ</div>
+
+                <div class="info-grid">
+                    <div>
+                        <h4>Անուն</h4>
+                        <p>Էրիկ Զոհրաբյան</p>
+                        <h4 style="margin-top:15px;">Գտնվելու վայր</h4>
+                        <p>Կապան, Հայաստան</p>
+                    </div>
+                    <div>
+                        <h4>Մասնագիտություն</h4>
+                        <p>Թերապևտիկ և Էսթետիկ Ստոմատոլոգիա</p>
+                        <h4 style="margin-top:15px;">Կարգախոս</h4>
+                        <p>Ձեր ժպիտը մեր առաքելությունն է:</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ՍԵԿՑԻԱ 3: EDUCATION -->
+        <section class="section education animate-on-scroll">
+            <div class="edu-left">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                    alt="Գործիքներ" class="img-animate">
+            </div>
+            <div class="edu-right">
+                <span class="script-title">Իմ</span>
+                <h2 class="bold-title">ԿՐԹՈՒԹՅՈՒՆԸ</h2>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h4>2010 - 2015</h4>
+                        <p><strong>Երևանի Մ. Հերացու անվան բժշկական համալսարան</strong></p>
+                        <p>Ատամնաբուժության ֆակուլտետ, բակալավր:</p>
+                    </div>
+                    <div class="card">
+                        <h4>2015 - 2017</h4>
+                        <p><strong>Մասնագիտական վերապատրաստում</strong></p>
+                        <p>Թերապևտիկ ստոմատոլոգիա և էսթետիկ ռեստավրացիա:</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ՍԵԿՑԻԱ 4: EXPERIENCE -->
+        <section class="section experience animate-on-scroll">
+            <div class="exp-left">
+                <span class="script-title">Իմ</span>
+                <h2 class="bold-title">ԱՇԽԱՏԱՆՔԸ</h2>
+
+                <div class="exp-list">
+                    <div class="exp-item">
+                        <div class="exp-date">2020 - Ներկա</div>
+                        <div class="exp-desc">
+                            <h4>«Դենտալ Կլինիկա» | Գլխավոր բժիշկ</h4>
+                            <p>Իրականացնում եմ բարդ ատամնաբուժական միջամտություններ և կոսմետիկ վերականգնում:</p>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2017 - 2020</div>
+                        <div class="exp-desc">
+                            <h4>«Սմայլ» | Ատամնաբույժ-թերապևտ</h4>
+                            <p>Աշխատանք հիվանդների հետ, ախտորոշում և բուժում:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="exp-right">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                    alt="Կլինիկա" class="img-animate">
+            </div>
+        </section>
+
+        <!-- *** ՍԵԿՑԻԱ 5: ՄԵՐ ԱՇԽԱՏԱՆՔՆԵՐԸ (WORKS) *** -->
+        <section class="section works animate-on-scroll">
+            <span class="script-title">Մեր</span>
+            <h2 class="bold-title">ԱՇԽԱՏԱՆՔՆԵՐԸ</h2>
+            <div class="subtitle">ԱՐԴՅՈՒՆՔ, ՈՐ ԽՈՍՈՒՄ Է ԻՐ ՄԱՍԻՆ</div>
+
+            <div class="works-gallery">
+
+                <!-- Աշխատանք 1 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 1" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                            alt="After 1" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Իմպլանտացիա
+                        <span>Ամբողջական վերականգնում</span>
+                    </div>
+                </div>
+
+                <!-- Աշխատանք 2 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 2" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                            alt="After 2" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Էսթետիկ Ռեստավրացիա
+                        <span>Ժպիտի ձևավորում</span>
+                    </div>
+                </div>
+
+                <!-- Աշխատանք 3 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 3" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                            alt="After 3" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Ժպիտի Դիզայն
+                        <span>Կոսմետիկ ուղղում</span>
+                    </div>
+                </div>
+
+                <!-- Աշխատանք 4 -->
+                <div class="work-item">
+                    <div class="before-after-slider">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                            alt="Before 4" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                            alt="After 4" class="img-after">
+                        <span class="ba-label before">ՄԻՆՉԵՎ</span>
+                        <span class="ba-label after">ՀԵՏՈ</span>
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="work-caption">
+                        Վինիրներ
+                        <span>Էսթետիկ վերականգնում</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- *** ՍԵԿՑԻԱ 6: ԿԱՊ ՄԵԶ ՀԵՏ *** -->
+        <section class="section contact animate-on-scroll">
+            <h2>Կապ մեզ հետ</h2>
+            <h3>ԱՄՐԱԳՐՎԵՔ ԶՆՆՈՒԹՅԱՆ</h3>
+            <p>Հետևեք մեզ սոցիալական ցանցերում՝ տեսնելու մեր աշխատանքները և ստանալու օգտակար խորհուրդներ ատամների խնամքի
+                վերաբերյալ։</p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/zohrabyan_dentist/?hl=ru" target="_blank" class="social-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="tel:+374XXXXXXXX" class="social-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    Զանգահարել
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- *** JavaScript ԱՆԻՄԱՑԻԱՆԵՐ *** -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .img-animate');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- *** JavaScript ԲՈԼՈՐ ՍԼԱՅԴԵՐՆԵՐԻ ՀԱՄԱՐ *** -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sliders = document.querySelectorAll('.before-after-slider');
+
+            sliders.forEach(slider => {
+                const afterImg = slider.querySelector('.img-after');
+                const handle = slider.querySelector('.slider-handle');
+                let isDragging = false;
+
+                function moveSlider(x) {
+                    const rect = slider.getBoundingClientRect();
+                    let position = ((x - rect.left) / rect.width) * 100;
+                    position = Math.max(0, Math.min(100, position));
+                    afterImg.style.clipPath = `inset(0 0 0 ${position}%)`;
+                    handle.style.left = position + '%';
+                }
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    moveSlider(e.clientX);
+                });
+
+                window.addEventListener('mousemove', (e) => {
+                    if (isDragging) moveSlider(e.clientX);
+                });
+
+                window.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                slider.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    moveSlider(e.touches[0].clientX);
+                }, { passive: true });
+
+                slider.addEventListener('touchmove', (e) => {
+                    if (isDragging) moveSlider(e.touches[0].clientX);
+                }, { passive: true });
+
+                slider.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
