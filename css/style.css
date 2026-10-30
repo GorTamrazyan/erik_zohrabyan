@@ -834,15 +834,15 @@ body {
     background: white;
     border: 1px solid #e0e6ed;
     border-radius: 12px;
-    padding: 0 25px;
-    transition: box-shadow 0.3s;
-}
-
-.price-group[open] {
+    padding: 20px 25px;
     box-shadow: 0 10px 25px rgba(26, 59, 110, 0.1);
+    font-weight: 800;
+    font-size: 16px;
+    color: #1a3b6e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.price-group summary,
 .faq-item summary {
     cursor: pointer;
     list-style: none;
@@ -852,21 +852,10 @@ body {
     gap: 15px;
 }
 
-.price-group summary::-webkit-details-marker,
 .faq-item summary::-webkit-details-marker {
     display: none;
 }
 
-.price-group summary {
-    padding: 20px 0;
-    font-weight: 800;
-    font-size: 16px;
-    color: #1a3b6e;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.price-group summary::after,
 .faq-item summary::after {
     content: '+';
     flex-shrink: 0;
@@ -883,7 +872,6 @@ body {
     transition: transform 0.3s, background 0.3s;
 }
 
-.price-group[open] summary::after,
 .faq-item[open] summary::after {
     transform: rotate(45deg);
     background: #8ab4f8;
@@ -1093,7 +1081,7 @@ body {
     }
 
     .price-group {
-        padding: 0 18px;
+        padding: 20px 18px;
     }
 
     .reviews-grid {
