@@ -843,6 +843,10 @@ body {
     letter-spacing: 1px;
 }
 
+.price-group-note {
+    text-transform: none;
+}
+
 .faq-item summary {
     cursor: pointer;
     list-style: none;
