@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -143,6 +142,10 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+}
+
+.hero-right picture {
+    display: contents;
 }
 
 .hero-right img {

@@ -5,15 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Բժ. Էրիկ Զոհրաբյան | Պրեմիում Պորտֆոլիո</title>
-    <meta name="description" content="[Կարճ նկարագրություն՝ ատամնաբուժություն, իմպլանտացիա, էսթետիկա]">
-    <meta property="og:title" content="[Բժ. Անուն Ազգանուն] — Ստոմատոլոգ">
-    <meta property="og:description" content="[Կարճ նկարագրություն]">
-    <meta property="og:image" content="images/og.jpg">
+    <meta name="description" content="Բժ. Էրիկ Զոհրաբյան — բժիշկ-ստոմատոլոգ, իմպլանտոլոգ։ Թերապևտիկ և էսթետիկ ստոմատոլոգիա, իմպլանտացիա․ գներ, աշխատանքներ և կոնտակտներ։">
+    <meta name="theme-color" content="#1a3b6e">
+    <link rel="canonical" href="https://erik-zohrabyan.vercel.app/">
+    <meta property="og:title" content="Բժ. Էրիկ Զոհրաբյան — Ստոմատոլոգ">
+    <meta property="og:description" content="Թերապևտիկ և էսթետիկ ստոմատոլոգիա, իմպլանտացիա։ Գներ, աշխատանքներ և կոնտակտներ։">
+    <meta property="og:image" content="https://erik-zohrabyan.vercel.app/images/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://erik-zohrabyan.vercel.app/">
+    <meta property="og:locale" content="hy_AM">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:type" content="website">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <!-- Hero լուսանկարը՝ առաջինը -->
+    <link rel="preload" as="image" type="image/webp" imagesrcset="images/doctor-600.webp 600w, images/doctor-900.webp 900w" imagesizes="(max-width: 768px) 100vw, 45vw" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600;800;900&display=swap">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans+Armenian:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
     <link rel="stylesheet" href="css/style.css">
     <!-- 3D ատամ — ոճեր -->
     <style>
@@ -37,7 +49,7 @@
     <div class="portfolio-wrapper">
 
         <!-- ՍԵԿՑԻԱ 1: HERO -->
-        <section class="section hero animate-on-scroll">
+        <section class="section hero animate-on-scroll is-visible">
             <div class="hero-left">
                 <span class="script-title">Ստոմատոլոգիա</span>
                 <h1 class="bold-title">Էրիկ<br>Զոհրաբյան</h1>
@@ -47,7 +59,10 @@
             <div class="hero-right">
                 <div class="year-badge">2026</div>
                 <!-- *** ՁԵՐ ԼՈՒՍԱՆԿԱՐԸ *** -->
-                <img src="images/doctor1.jpg" alt="Բժ. Էրիկ Զոհրաբյան" class="img-animate">
+                <picture>
+                    <source type="image/webp" srcset="images/doctor-600.webp 600w, images/doctor-900.webp 900w" sizes="(max-width: 768px) 100vw, 45vw">
+                    <img src="images/doctor-900.jpg" width="900" height="1199" alt="Բժ. Էրիկ Զոհրաբյան" class="img-animate is-visible" fetchpriority="high" decoding="async">
+                </picture>
             </div>
         </section>
 
@@ -87,9 +102,9 @@
                 <!-- Աշխատանք 1 -->
                 <div class="work-item">
                     <div class="before-after-slider">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
                             alt="Before 1" class="img-before">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
                             alt="After 1" class="img-after">
                         <span class="ba-label before">ՄԻՆՉԵՎ</span>
                         <span class="ba-label after">ՀԵՏՈ</span>
@@ -104,9 +119,9 @@
                 <!-- Աշխատանք 2 -->
                 <div class="work-item">
                     <div class="before-after-slider">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
                             alt="Before 2" class="img-before">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
                             alt="After 2" class="img-after">
                         <span class="ba-label before">ՄԻՆՉԵՎ</span>
                         <span class="ba-label after">ՀԵՏՈ</span>
@@ -121,9 +136,9 @@
                 <!-- Աշխատանք 3 -->
                 <div class="work-item">
                     <div class="before-after-slider">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
                             alt="Before 3" class="img-before">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
                             alt="After 3" class="img-after">
                         <span class="ba-label before">ՄԻՆՉԵՎ</span>
                         <span class="ba-label after">ՀԵՏՈ</span>
@@ -138,9 +153,9 @@
                 <!-- Աշխատանք 4 -->
                 <div class="work-item">
                     <div class="before-after-slider">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
                             alt="Before 4" class="img-before">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
                             alt="After 4" class="img-after">
                         <span class="ba-label before">ՄԻՆՉԵՎ</span>
                         <span class="ba-label after">ՀԵՏՈ</span>
@@ -248,17 +263,16 @@
     </a>
 
     <!-- *** JavaScript ԱՆԻՄԱՑԻԱՆԵՐ *** -->
-    <script src="js/animations.js"></script>
+    <script defer src="js/animations.js"></script>
 
     <!-- *** JavaScript ԲՈԼՈՐ ՍԼԱՅԴԵՐՆԵՐԻ ՀԱՄԱՐ *** -->
-    <script src="js/slider.js"></script>
+    <script defer src="js/slider.js"></script>
 
     <!-- *** 3D ԱՏԱՄ *** -->
     <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
     <script type="module">
-import * as THREE from 'three';
-import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+// three.js-ը բեռնվում է միայն երբ 3D ատամը մոտենում է էկրանին
+let THREE, MarchingCubes, RoomEnvironment;
 
 /* ---------- tooth shape (signed distance field) ---------- */
 const len=(x,y,z)=>Math.hypot(x,y,z);
@@ -347,9 +361,23 @@ function mountTooth(host){
   requestAnimationFrame(t=>{last=t;frame(t);canvas.style.opacity='1';host.classList.add('is3d');});
 }
 
-document.querySelectorAll('[data-tooth3d]').forEach(el=>{
-  try{ mountTooth(el); }catch(err){ console.warn('3D tooth disabled:',err); }
-});
+async function loadThree(){
+  if(THREE) return;
+  const [three, mcMod, envMod]=await Promise.all([
+    import('three'),
+    import('three/addons/objects/MarchingCubes.js'),
+    import('three/addons/environments/RoomEnvironment.js')
+  ]);
+  THREE=three; MarchingCubes=mcMod.MarchingCubes; RoomEnvironment=envMod.RoomEnvironment;
+}
+const toothObserver=new IntersectionObserver((entries,obs)=>{
+  entries.forEach(async e=>{
+    if(!e.isIntersecting) return;
+    obs.unobserve(e.target);
+    try{ await loadThree(); mountTooth(e.target); }catch(err){ console.warn('3D tooth disabled:',err); }
+  });
+},{rootMargin:'400px 0px'});
+document.querySelectorAll('[data-tooth3d]').forEach(el=>toothObserver.observe(el));
     </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
