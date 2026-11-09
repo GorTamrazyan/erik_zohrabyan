@@ -1,3 +1,15 @@
 {
-  "rewrites": [{ "source": "/", "destination": "/portfolio.html" }]
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/portfolio.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/card",
+      "destination": "/?from=nfc",
+      "permanent": false
+    }
+  ]
 }
